@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <h1 class="text-center">Sprint Calculator</h1>
+
+  <div class="form-group mt-4">
+    <label for="sprintPoints" class="form-label">Sprint Points</label>
+    <input
+      type="number"
+      id="sprintPoints"
+      class="form-control"
+      placeholder="Enter sprint points"
+      [(ngModel)]="sprintPoints"
+    />
+  </div>
+
+  <div class="d-flex justify-content-center mt-4">
+    <button class="btn btn-primary mx-1" (click)="generateSprint()">Generate Sprint</button>
+    <button class="btn btn-warning mx-1" (click)="clearStories()">Clear Stories</button>
+    <button class="btn btn-danger mx-1" (click)="clearSelectedStories()">Clear Selected Stories</button>
+  </div>
+
+</div>
+

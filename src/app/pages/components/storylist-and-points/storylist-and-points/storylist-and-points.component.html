@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <div class="row">
+    <div *ngFor="let story of stories" class="col-12 col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title" style="font-weight: bold;">{{ story.title }}</h4>
+          <p class="card-text">Story Points: {{ story.point }}</p>
+          <p class="card-text">Added on: {{ story.addedOn | date: 'short' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

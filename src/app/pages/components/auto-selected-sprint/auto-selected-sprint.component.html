@@ -1,0 +1,12 @@
+<div *ngIf="autoSelectedSprintList.length > 0" class="container mt-4">
+  <h2 class="text-center">Selected Sprint Stories</h2>
+
+  <div *ngFor="let sprint of autoSelectedSprintList" class="card mt-3 small-card">
+    <div class="card-body">
+      <h3 class="card-title" style="font-weight: bold;">{{ sprint.title }}</h3>
+      <p class="card-text"><strong>Points:</strong> {{ sprint.point }}</p>
+    </div>
+  </div>
+</div>
+
+

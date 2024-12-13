@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <!-- Heading -->
+      <h2 class="text-center mb-4">Add Story Form</h2>
+
+      <!-- Form -->
+      <form [formGroup]="storyForm" (ngSubmit)="onSubmit()" class="p-4 border rounded bg-light">
+        <!-- Story Name -->
+        <div class="mb-3">
+          <label for="storyName" class="form-label">Story Name</label>
+          <input
+            id="storyName"
+            type="text"
+            class="form-control"
+            formControlName="title"
+            placeholder="Enter story name"
+          />
+          <!-- Validation Errors -->
+          <div *ngIf="submitted && storyForm.get('title')?.invalid" class="text-danger mt-1">
+            <small *ngIf="storyForm.get('title')?.errors?.['required']">Story Name is required.</small>
+            <small *ngIf="storyForm.get('title')?.errors?.['maxLength']">Maximum length is 50 characters.</small>
+          </div>
+        </div>
+
+        <!-- Story Points -->
+        <div class="mb-3">
+          <label for="storyPoints" class="form-label">Story Points</label>
+          <input
+            id="storyPoints"
+            type="number"
+            class="form-control"
+            formControlName="point"
+            placeholder="Enter story points"
+          />
+          <!-- Validation Errors -->
+          <div *ngIf="submitted && storyForm.get('point')?.invalid" class="text-danger mt-1">
+            <small *ngIf="storyForm.get('point')?.errors?.['required']">Story Points are required.</small>
+            <small *ngIf="storyForm.get('point')?.errors?.['min']">Points must be greater than 0.</small>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary">Add Story</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
